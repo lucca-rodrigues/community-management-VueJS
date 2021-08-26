@@ -5,12 +5,11 @@
         <img src="~/assets/logo.svg" alt="Logo multiplicame" class="logo" />
       </div>
     </div>
-    <div class="row">
+    <div class="row q-mt-xl q-mb-lg">
       <div class="col-12">
         <Title :title="`Functionalidades`" class="q-mt" />
       </div>
     </div>
-
     <div class="tabs-functionalities">
       <div>
         <q-card>
@@ -46,16 +45,19 @@
       </div>
     </div>
   </div>
+  <Footer/>
 </template>
 
 <script>
 import { ref } from "vue";
 import Title from "components/Title";
+import Footer from "components/Footer";
 import Api from "../../services/api";
 
 export default {
   components: {
     Title,
+    Footer
   },
   setup() {
     return {
@@ -121,6 +123,9 @@ export default {
 .item-title{
   display: flex;
   align-items: center;
+  font-size: 16px;
+  font-weight: 400;
+  color: #0C0B39
 }
 .item-title img{
   max-width: 20px;
@@ -137,5 +142,8 @@ export default {
     font-size: 16px;
     color: #6C6C80;
   }
+  .q-tab-panel {
+    padding-top: 100px;
+}
 }
 </style>
