@@ -26,6 +26,7 @@
 <script>
 import Title from "components/Title";
 import Text from "components/Text";
+import './styles.scss';
 
 export default {
   components: {
@@ -34,10 +35,3 @@ export default {
   },
 };
 </script>
-<style>
-  .image-home{
-    max-width: 80%;
-    display: flex;
-    margin: 0 auto;
-  }
-</style>
