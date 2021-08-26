@@ -1,13 +1,15 @@
 <template>
-  <div class="fullscreen bg-blue text-white text-center q-pa-md flex flex-center">
-    Home
+  <div class="fullscreen bg-grey-2">
+    <Title :title="'Produtos'" class="q-mt-lg" />
   </div>
 </template>
 
 <script>
-import { defineComponent } from 'vue'
+import Title from 'src/components/Title'
 
-export default defineComponent({
-  name: 'Home'
-})
+export default {
+  components: {
+    Title
+  }
+}
 </script>
