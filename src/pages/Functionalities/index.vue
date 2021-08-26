@@ -6,10 +6,10 @@
       </div>
     </div>
     <div class="row q-mt-xl q-mb-lg flex items-center justify-between">
-      <div class="col-6 col-md-6 col-sm-12">
+      <div class="col-md-6 col-sm-12">
         <Title :title="`Functionalidades`" class="q-mt" />
       </div>      
-      <div class="col-6 col-md-6 col-sm-12 text-right add-new">
+      <div class="col-md-6 col-sm-12 text-right add-new">
         <router-link class="decoration-none" to="/new-functionalities">
           Adicionar funcionalidade
         </router-link>
@@ -26,7 +26,7 @@
           <q-tab-panels v-model="tab" animated>
             <q-tab-panel name="managers">
               <div class="row">
-                <div class="col-6 col-md-6 col-sm-12 list-item" v-for="item in managers" :key="item?.id">
+                <div class="col-md-6 col-sm-12 list-item" v-for="item in managers" :key="item?.id">
                   <div class="text-h6 item-title"><img src="~/assets/person-icon.svg"/>{{ item?.title }}</div>
                   <p>
                     {{ item?.description }}
@@ -37,7 +37,7 @@
 
             <q-tab-panel name="member">
               <div class="row">
-                <div class="col-6 col-md-6 col-sm-12 list-item" v-for="item in members" :key="item?.id">
+                <div class="col-md-6 col-sm-12 list-item" v-for="item in members" :key="item?.id">
                   <div class="text-h6 item-title"><img src="~/assets/person-icon.svg"/>{{ item?.title }}</div>
                   <p>
                     {{ item?.description }}

@@ -6,7 +6,7 @@
       </div>
     </div>
     <div class="row items-center justify-center">
-      <div class="col-6 col-md-6 col-sm-12 column-text-home">
+      <div class="col-md-6 col-sm-12 column-text-home">
         <Title
           :title="`Faça a Gestão da sua comunidade de uma forma simples e completa`"
           class="q-mt"
@@ -19,7 +19,7 @@
           TODAS AS FUNCIONALIDADES
         </router-link>
       </div>
-      <div class="col-6 col-md-6 col-sm-12">
+      <div class="col-md-6 col-sm-12">
         <img src="~/assets/image-home.svg" alt="Image Peaples" class="image-home"/>
       </div>
     </div>
