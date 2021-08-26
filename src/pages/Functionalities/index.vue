@@ -22,8 +22,8 @@
           <q-tab-panels v-model="tab" animated>
             <q-tab-panel name="managers">
               <div class="row">
-                <div class="col-6" v-for="item in managers" :key="item?.id">
-                  <div class="text-h6">{{ item?.title }}</div>
+                <div class="col-6 col-md-6 col-sm-12 list-item" v-for="item in managers" :key="item?.id">
+                  <div class="text-h6 item-title"><img src="~/assets/person-icon.svg"/>{{ item?.title }}</div>
                   <p>
                     {{ item?.description }}
                   </p>
@@ -33,8 +33,8 @@
 
             <q-tab-panel name="member">
               <div class="row">
-                <div class="col-6" v-for="item in members" :key="item?.id">
-                  <div class="text-h6">{{ item?.title }}</div>
+                <div class="col-6 col-md-6 col-sm-12 list-item" v-for="item in members" :key="item?.id">
+                  <div class="text-h6 item-title"><img src="~/assets/person-icon.svg"/>{{ item?.title }}</div>
                   <p>
                     {{ item?.description }}
                   </p>
@@ -110,5 +110,25 @@ export default {
   background: transparent !important;
   color: #353286 !important;
   border-radius: 5px;
+}
+.item-title{
+  display: flex;
+  align-items: center;
+}
+.item-title img{
+  max-width: 20px;
+  margin-right: 10px;
+}
+
+.list-item {
+    min-height: 170px;
+    line-height: 30px;
+}
+@media(min-width:500px) {
+  .list-item p {
+    max-width: 80%;
+    font-size: 16px;
+    color: #6C6C80;
+  }
 }
 </style>
