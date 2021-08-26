@@ -12,24 +12,36 @@
     </div>
 
     <div class="tabs-functionalities">
-      <div style="max-width: 900px">
+      <div>
         <q-card>
           <q-tabs
             v-model="tab"
           >
-            <q-tab name="gestor" label="COMO GESTOR" class="button-tabs"/>
+            <q-tab name="managers" label="COMO GESTOR" class="button-tabs"/>
             <q-tab name="member" label="COMO MEMBRO" class="button-tabs"/>
           </q-tabs>
 
           <q-tab-panels v-model="tab" animated>
-            <q-tab-panel name="gestor">
-              <div class="text-h6">Mails</div>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            <q-tab-panel name="managers">
+              <ul class="q-px-lg " v-for="(item) in managers" :key="item?.id">
+                <li :key="item.id">
+                  <div class="text-h6">{{item?.title}}</div>
+                    <p>
+                      {{item?.description}}
+                    </p>
+                  </li>
+              </ul>
             </q-tab-panel>
 
             <q-tab-panel name="member">
-              <div class="text-h6">Alarms</div>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              <ul class="q-px-lg " v-for="(item) in members" :key="item?.id">
+                <li :key="item.id">
+                  <div class="text-h6">{{item?.title}}</div>
+                    <p>
+                      {{item?.description}}
+                    </p>
+                  </li>
+              </ul>
             </q-tab-panel>
           </q-tab-panels>
         </q-card>
@@ -41,6 +53,7 @@
 <script>
 import { ref } from "vue";
 import Title from "components/Title";
+import Api from "../../services/api";
 
 export default {
   components: {
@@ -48,9 +61,31 @@ export default {
   },
   setup() {
     return {
-      tab: ref("gestor"),
+      tab: ref("managers"),
     };
   },
+  data() {
+    return {
+      managers: [],
+      members: [],
+    }
+  },
+  methods: {
+    async getAllManagers() {
+      const response = await Api.get("/managers");
+      console.log(response.data);
+      this.managers = response.data;
+    },
+    async getAllMembers() {
+      const response = await Api.get("/members");
+      console.log(response.data);
+      this.members = response.data;
+    },
+  },
+  mounted() {
+    this.getAllManagers();
+    this.getAllMembers();
+  }
 };
 </script>
 <style>

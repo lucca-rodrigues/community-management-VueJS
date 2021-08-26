@@ -1,7 +1,13 @@
 // app global css in SCSS form
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,700&display=swap');
+
 
 body{
     background: #f5f5f5 !important;
+    font-family: 'Ubuntu', sans-serif;
+}
+button{
+    font-family: 'Roboto', sans-serif!important;
 }
 
 @media(min-width: 500px){
