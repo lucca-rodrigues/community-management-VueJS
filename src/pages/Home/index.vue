@@ -2,7 +2,9 @@
   <div class="q-pa-md">
     <div class="row">
       <div class="col">
-        <img src="~/assets/logo.svg" alt="Logo multiplicame" class="logo" />
+        <router-link to="/">
+          <img src="~/assets/logo.svg" alt="Logo multiplicame" class="logo" />
+        </router-link>
       </div>
     </div>
     <div class="row items-center justify-center">
