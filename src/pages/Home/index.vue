@@ -1,10 +1,14 @@
 <template>
   <div class="q-pa-md">
-    <div class="row justify-center">
+    <div class="row">
+      <div class="col">
+        <img src="~/assets/logo.svg" alt="Logo multiplicame" class="logo" />
+      </div>
+    </div>
+    <div class="row items-center justify-center">
       <div class="col-6 col-md-6 col-sm-12">
-        <img src="~/assets/logo.svg" alt="" />
         <Title
-          :title="'Faça a Gestão da sua comunidade de uma forma simples e completa'"
+          :title="`Faça a Gestão da sua comunidade de uma forma simples e completa`"
           class="q-mt"
         />
         <Text
@@ -13,15 +17,15 @@
         TODAS AS FUNCIONALIDADES
       </div>
       <div class="col-6 col-md-6 col-sm-12">
-        <img src="~/assets/image-home.svg" alt="" />
+        <img src="~/assets/image-home.svg" alt="Image Peaples" class="image-home"/>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Title from "src/components/Title";
-import Text from "src/components/Text";
+import Title from "components/Title";
+import Text from "components/Text";
 
 export default {
   components: {
@@ -30,3 +34,10 @@ export default {
   },
 };
 </script>
+<style>
+  .image-home{
+    max-width: 80%;
+    display: flex;
+    margin: 0 auto;
+  }
+</style>

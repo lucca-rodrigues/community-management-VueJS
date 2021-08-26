@@ -3,3 +3,14 @@
 body{
     background: #f5f5f5 !important;
 }
+
+@media(min-width: 500px){
+    div#q-app > div {
+        max-width: 80%;
+        margin: 0 auto;
+        padding: 50px 0;
+    }
+    .logo {
+        max-width: 250px;
+    }
+}
