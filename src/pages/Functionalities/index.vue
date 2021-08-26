@@ -14,34 +14,32 @@
     <div class="tabs-functionalities">
       <div>
         <q-card>
-          <q-tabs
-            v-model="tab"
-          >
-            <q-tab name="managers" label="COMO GESTOR" class="button-tabs"/>
-            <q-tab name="member" label="COMO MEMBRO" class="button-tabs"/>
+          <q-tabs v-model="tab">
+            <q-tab name="managers" label="COMO GESTOR" class="button-tabs" />
+            <q-tab name="member" label="COMO MEMBRO" class="button-tabs" />
           </q-tabs>
 
           <q-tab-panels v-model="tab" animated>
             <q-tab-panel name="managers">
-              <ul class="q-px-lg " v-for="(item) in managers" :key="item?.id">
-                <li :key="item.id">
-                  <div class="text-h6">{{item?.title}}</div>
-                    <p>
-                      {{item?.description}}
-                    </p>
-                  </li>
-              </ul>
+              <div class="row">
+                <div class="col-6" v-for="item in managers" :key="item?.id">
+                  <div class="text-h6">{{ item?.title }}</div>
+                  <p>
+                    {{ item?.description }}
+                  </p>
+                </div>
+              </div>
             </q-tab-panel>
 
             <q-tab-panel name="member">
-              <ul class="q-px-lg " v-for="(item) in members" :key="item?.id">
-                <li :key="item.id">
-                  <div class="text-h6">{{item?.title}}</div>
-                    <p>
-                      {{item?.description}}
-                    </p>
-                  </li>
-              </ul>
+              <div class="row">
+                <div class="col-6" v-for="item in members" :key="item?.id">
+                  <div class="text-h6">{{ item?.title }}</div>
+                  <p>
+                    {{ item?.description }}
+                  </p>
+                </div>
+              </div>
             </q-tab-panel>
           </q-tab-panels>
         </q-card>
@@ -68,7 +66,7 @@ export default {
     return {
       managers: [],
       members: [],
-    }
+    };
   },
   methods: {
     async getAllManagers() {
@@ -85,7 +83,7 @@ export default {
   mounted() {
     this.getAllManagers();
     this.getAllMembers();
-  }
+  },
 };
 </script>
 <style>
@@ -94,24 +92,23 @@ export default {
   display: flex;
   margin: 0 auto;
 }
-.tabs-functionalities div{
-  box-shadow: none!important;
-  background: transparent!important;
+.tabs-functionalities div {
+  box-shadow: none !important;
+  background: transparent !important;
 }
 
-
-.q-tabs__content.row.no-wrap.items-center.self-stretch.hide-scrollbar.q-tabs__content--align-center{
+.q-tabs__content.row.no-wrap.items-center.self-stretch.hide-scrollbar.q-tabs__content--align-center {
   display: flex;
   justify-content: flex-start;
 }
 .q-tab--active.button-tabs {
-    background:#353286!important;
-    color: #fff!important;
-    border-radius: 5px;
+  background: #353286 !important;
+  color: #fff !important;
+  border-radius: 5px;
 }
 .q-tab--inactive.button-tabs {
-    background:transparent!important;
-    color: #353286!important;
-    border-radius: 5px;
+  background: transparent !important;
+  color: #353286 !important;
+  border-radius: 5px;
 }
 </style>
