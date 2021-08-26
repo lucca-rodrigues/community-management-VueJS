@@ -2,4 +2,28 @@
     max-width: 80%;
     display: flex;
     margin: 0 auto;
+}
+
+.button-home{
+  background: #353286;
+  padding: 20px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+@media(min-width: 500px){
+  .column-text-home{
+    h1, p{
+      max-width: 75%;
+    }
+    p{
+      font-size: 18px;
+      font-family: 'Roboto', sans-serif;
+      color: #6C6C80!important;
+    }
+    h1{
+      color: #0C0B39!important;
+    }
   }
+}

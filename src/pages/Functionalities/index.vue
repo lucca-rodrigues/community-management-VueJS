@@ -5,9 +5,14 @@
         <img src="~/assets/logo.svg" alt="Logo multiplicame" class="logo" />
       </div>
     </div>
-    <div class="row q-mt-xl q-mb-lg">
-      <div class="col-12">
+    <div class="row q-mt-xl q-mb-lg flex items-center justify-between">
+      <div class="col-6 col-md-6 col-sm-12">
         <Title :title="`Functionalidades`" class="q-mt" />
+      </div>      
+      <div class="col-6 col-md-6 col-sm-12 text-right add-new">
+        <router-link class="decoration-none" to="/new-functionalities">
+          Adicionar funcionalidade
+        </router-link>
       </div>
     </div>
     <div class="tabs-functionalities">

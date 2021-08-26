@@ -46,6 +46,14 @@
       min-height: 170px;
       line-height: 30px;
   }
+  .add-new{
+    text-decoration: underline;
+    color: #0C0B39;
+  }
+
+.add-new:hover {
+  cursor: pointer!important;
+}
   
   @media(min-width:500px) {
     .list-item p {

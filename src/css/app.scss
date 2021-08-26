@@ -10,6 +10,10 @@ button{
     font-family: 'Roboto', sans-serif!important;
 }
 
+.decoration-none{
+    text-decoration: none !important;
+}
+
 @media(min-width: 500px){
     div#q-app > div:first-child {
         max-width: 80%;
