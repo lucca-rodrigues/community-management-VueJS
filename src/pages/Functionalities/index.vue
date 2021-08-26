@@ -105,11 +105,18 @@ export default {
   background: #353286 !important;
   color: #fff !important;
   border-radius: 5px;
+  min-width: 200px;
+}
+.q-tabs__content > div:first-child {
+  margin-right: 20px;
 }
 .q-tab--inactive.button-tabs {
   background: transparent !important;
   color: #353286 !important;
   border-radius: 5px;
+  min-width: 200px;
+  border: solid;
+
 }
 .item-title{
   display: flex;
