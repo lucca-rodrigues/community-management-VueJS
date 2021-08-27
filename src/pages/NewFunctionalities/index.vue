@@ -127,6 +127,7 @@ export default {
       } else {
         this.createNewMember(data);
       }
+      this.$router.push({path: '/functionalities'});
     },
   },
 };
