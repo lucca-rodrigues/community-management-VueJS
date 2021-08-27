@@ -1,4 +1,4 @@
-# community-management (community-management)
+# community-management 
 <img src="./src/assets/screenshot.jpg" alt="Screenshot" width="100%"/>
 
 ## Instalar o projeto
