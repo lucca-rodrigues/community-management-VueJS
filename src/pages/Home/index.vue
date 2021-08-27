@@ -20,7 +20,6 @@
         <router-link class="decoration-none button-home" to="/functionalities">
           <img src="~/assets/icon-button.svg" class="icon-button"/> TODAS AS FUNCIONALIDADES
         </router-link>
-        <!-- <q-btn icon="'~/assets/icon-button.svg'">TODAS AS FUNCIONALIDADES</q-btn> -->
       </div>
       <div class="col-md-6 col-sm-12">
         <img src="~/assets/image-home.svg" alt="Image Peaples" class="image-home"/>

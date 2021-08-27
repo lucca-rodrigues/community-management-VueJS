@@ -21,27 +21,54 @@
       <div>
         <q-card>
           <q-tabs v-model="tab">
-            <q-tab name="managers" label="COMO GESTOR" class="button-tabs" @click="typeFunctionality = 'managers'"/>
-            <q-tab name="members" label="COMO MEMBRO" class="button-tabs" @click="typeFunctionality = 'members'"/>
-          </q-tabs>
-          <q-form @submit="handleSubmit" class="q-gutter-md">
-            <q-input filled v-model="data.title" label="Titulo" lazy-rules />
-            <q-input
-              filled
-              v-model="data.icon"
-              label="Ícone(nome)"
-              lazy-rules
+            <q-tab
+              name="managers"
+              label="COMO GESTOR"
+              class="button-tabs"
+              @click="typeFunctionality = 'managers'"
             />
+            <q-tab
+              name="members"
+              label="COMO MEMBRO"
+              class="button-tabs"
+              @click="typeFunctionality = 'members'"
+            />
+          </q-tabs>
+          <q-form @submit="handleSubmit" class="form-add-new">
+            <q-label>Titulo</q-label>
             <q-input
-              filled
-              v-model="data.description"
-              type="textarea"
-              label="Descrição"
+              outlined
+              v-model="data.title"
               lazy-rules
+              class="q-mb-md"
+              color="#3D88D6"
+            />
+
+            <q-label>Icone(nome)</q-label>
+            <q-input
+              outlined
+              v-model="data.icon"
+              lazy-rules
+              class="q-mb-md"
+              color="#3D88D6"
+            />
+
+            <q-label>Descrição</q-label>
+            <q-input
+              type="textarea"
+              outlined
+              v-model="data.description"
+              lazy-rules
+              class="q-mb-md"
+              color="#3D88D6"
             />
 
             <div class="buttons">
-              <q-btn label="Enviar" type="submit" color="primary" />
+              <q-btn
+                label="ADICIONAR FUNCIONALIDADE"
+                type="submit"
+                style="background: #353286; color: white"
+              />
             </div>
           </q-form>
         </q-card>
@@ -97,8 +124,7 @@ export default {
 
       if (typeFunctionality === "managers") {
         this.createNewManager(data);
-      }
-      else{
+      } else {
         this.createNewMember(data);
       }
     },
