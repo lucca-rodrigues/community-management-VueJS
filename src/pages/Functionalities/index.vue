@@ -13,7 +13,7 @@
       </div>      
       <div class="col-md-6 col-sm-12 text-right add-new">
         <router-link class="decoration-none" to="/new-functionalities">
-          Adicionar funcionalidade
+          Adicionar funcionalidade +
         </router-link>
       </div>
     </div>

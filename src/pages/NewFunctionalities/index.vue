@@ -17,6 +17,30 @@
         </router-link>
       </div>
     </div>
+    <div class="tabs-functionalities">
+        <div>
+            <q-card>
+            <q-tabs v-model="tab">
+                <q-tab name="managers" label="COMO GESTOR" class="button-tabs" @click="this.typeFunctionality === 'managers'"/>
+                <q-tab name="member" label="COMO MEMBRO" class="button-tabs" @click="this.typeFunctionality === 'members'"/>
+            </q-tabs>
+
+            <q-tab-panels v-model="tab" animated>
+                <q-tab-panel name="managers">
+                <div class="row">
+                    teste
+                </div>
+                </q-tab-panel>
+
+                <q-tab-panel name="member">
+                <div class="row">
+                    teste2
+                </div>
+                </q-tab-panel>
+            </q-tab-panels>
+            </q-card>
+        </div>
+        </div>
   </div>
   <Footer/>
 </template>
@@ -33,32 +57,45 @@ export default {
     Title,
     Footer
   },
-  setup() {
+    setup() {
     return {
       tab: ref("managers"),
     };
   },
   data() {
     return {
-      managers: [],
-      members: [],
+      data: {
+          title:"",
+          icon: "",
+          description: "",
+      },
+      typeFunctionality: "managers",
     };
   },
   methods: {
-    async getAllManagers() {
-      const response = await Api.get("/managers");
+    handleSubmit(e) {
+      e.preventDefault();
+
+        if(typeFunctionality === "managers"){
+            this.createNewManage();
+        }
+        this.createNewMember();
+    },
+
+    createNewManage() {
+      const response = Api.post("/managers", data);
       console.log(response.data);
       this.managers = response.data;
     },
-    async getAllMembers() {
-      const response = await Api.get("/members");
+    createNewMember() {
+      const response = Api.post("/members", data);
       console.log(response.data);
       this.members = response.data;
     },
   },
   mounted() {
-    this.getAllManagers();
-    this.getAllMembers();
+    // this.createNewManage();
+    // this.createNewMember();
   },
 };
 </script>
