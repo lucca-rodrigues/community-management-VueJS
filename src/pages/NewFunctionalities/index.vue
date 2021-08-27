@@ -21,55 +21,29 @@
       <div>
         <q-card>
           <q-tabs v-model="tab">
-            <q-tab
-              name="managers"
-              label="COMO GESTOR"
-              class="button-tabs"
-              @click="this.typeFunctionality === 'managers'"
-            />
-            <q-tab
-              name="member"
-              label="COMO MEMBRO"
-              class="button-tabs"
-              @click="this.typeFunctionality === 'members'"
-            />
+            <q-tab name="managers" label="COMO GESTOR" class="button-tabs" @click="typeFunctionality = 'managers'"/>
+            <q-tab name="members" label="COMO MEMBRO" class="button-tabs" @click="typeFunctionality = 'members'"/>
           </q-tabs>
+          <q-form @submit="handleSubmit" class="q-gutter-md">
+            <q-input filled v-model="data.title" label="Titulo" lazy-rules />
+            <q-input
+              filled
+              v-model="data.icon"
+              label="Ícone(nome)"
+              lazy-rules
+            />
+            <q-input
+              filled
+              v-model="data.description"
+              type="textarea"
+              label="Descrição"
+              lazy-rules
+            />
 
-          <q-tab-panels v-model="tab" animated>
-            <q-tab-panel name="managers">
-              <div class="row">
-                <q-form @submit="createNewManage" class="q-gutter-md">
-                  <q-input
-                    filled
-                    v-model="data.title"
-                    label="Titulo"
-                    lazy-rules
-                  />
-                  <q-input
-                    filled
-                    v-model="data.icon"
-                    label="Ícone(nome)"
-                    lazy-rules
-                  />
-                  <q-input
-                    filled
-                    v-model="data.description"
-                    type="textarea"
-                    label="Descrição"
-                    lazy-rules
-                  />
-
-                  <div class="buttons">
-                    <q-btn label="Enviar" type="submit" color="primary" />
-                  </div>
-                </q-form>
-              </div>
-            </q-tab-panel>
-
-            <q-tab-panel name="member">
-              <div class="row">teste2</div>
-            </q-tab-panel>
-          </q-tab-panels>
+            <div class="buttons">
+              <q-btn label="Enviar" type="submit" color="primary" />
+            </div>
+          </q-form>
         </q-card>
       </div>
     </div>
@@ -105,20 +79,29 @@ export default {
     };
   },
   methods: {
-    createNewManage() {
+    createNewManager() {
       const data = this.data;
       Api.post("/managers", data);
       console.log("Created Manager:", data);
     },
+
     createNewMember() {
       const data = this.data;
       Api.post("/members", data);
       console.log("Created Member:", data);
     },
-  },
-  mounted() {
-    // this.createNewManage();
-    // this.createNewMember();
+
+    handleSubmit() {
+      const data = this.data;
+      const typeFunctionality = this.typeFunctionality;
+
+      if (typeFunctionality === "managers") {
+        this.createNewManager(data);
+      }
+      else{
+        this.createNewMember(data);
+      }
+    },
   },
 };
 </script>

@@ -13,6 +13,16 @@ body{
   color: #fff;
   border: none;
   border-radius: 5px;
+  display: flex;
+  align-items: center;
+  max-width: 300px;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+
+  img{
+    margin-right: 15px;
+    height: 18px;
+  }
 }
 
 .column-text-home {

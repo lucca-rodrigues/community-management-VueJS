@@ -47,18 +47,6 @@
       "title": "ACESSO A CONTEÚDOS",
       "description": "Possibilidade de fazer up-load de todos os documentos que possam ser solicitados por membros da comunidade.  Atas de reuniões, documentos e formulários podem ser liberados pelos gestores da plataforma.",
       "icon": "folder"
-    },
-    {
-      "title": "Teste",
-      "icon": "1",
-      "description": "Teste",
-      "id": 9
-    },
-    {
-      "title": "Jhemily Linda",
-      "icon": "Coração",
-      "description": "lindinha",
-      "id": 10
     }
   ],
   "members": [
