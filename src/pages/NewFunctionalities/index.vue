@@ -38,10 +38,7 @@
           <q-tab-panels v-model="tab" animated>
             <q-tab-panel name="managers">
               <div class="row">
-                <q-form
-                  @submit="createNewManage"
-                  class="q-gutter-md"
-                >
+                <q-form @submit="createNewManage" class="q-gutter-md">
                   <q-input
                     filled
                     v-model="data.title"
@@ -108,30 +105,16 @@ export default {
     };
   },
   methods: {
-      createNewManage(){
-        const data = this.data;
-        Api.post("/managers", data);
-        console.log('Created Manager:', data);
+    createNewManage() {
+      const data = this.data;
+      Api.post("/managers", data);
+      console.log("Created Manager:", data);
     },
     createNewMember() {
-        const data = this.data;
-        Api.post("/members", data);
-        console.log('Created Member:', data);
+      const data = this.data;
+      Api.post("/members", data);
+      console.log("Created Member:", data);
     },
-    handleSubmit() {
-        
-      //   e.preventDefault();
-
-    //   if (typeFunctionality === "managers") {
-    //     this.createNewManage();
-    //     console.log("managers");
-    //   }
-      createNewMember();
-      console.log("members");
-    },
-    // onReset() {},
-
-    
   },
   mounted() {
     // this.createNewManage();
