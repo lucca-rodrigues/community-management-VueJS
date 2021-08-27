@@ -5,7 +5,6 @@
 Instalar o projeto com:
 ```sh 
 yarn
-
 ```
 ou
 ```sh 
