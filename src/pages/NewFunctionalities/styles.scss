@@ -67,6 +67,9 @@
     width: 100%;
     padding: 10px!important;
   }
+  .q-tab-panel {
+    padding-left: 0;
+}
   
   @media(min-width:500px) {
     .list-item p {
@@ -88,9 +91,23 @@
 
   @media(max-width: 499px){
     .q-tab--active.button-tabs, .q-tab--inactive.button-tabs {
-      min-width: 150px;
+      min-width: 140px;
     }
     .buttons button {
       margin-top: 30px;
     }
+
+    .form-add-new{
+      margin-top: 50px;
+
+      .q-field__inner.relative-position.col.self-stretch{
+          margin-bottom: 25px!important;
+          margin-top: 15px;
+        }
+    }
+    .q-pa-md {
+      padding: 16px 16px;
+      padding: 16px 35px;
+    }
+
   }

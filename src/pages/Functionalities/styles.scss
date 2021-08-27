@@ -55,6 +55,9 @@
 .add-new:hover {
   cursor: pointer!important;
 }
+.q-tab-panel {
+  padding-left: 0;
+}
   
   @media(min-width:500px) {
     .list-item p {
