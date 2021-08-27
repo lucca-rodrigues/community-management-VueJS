@@ -17,12 +17,19 @@
           :text="'Multiplicame é uma plataforma que possui tudo o que você precisa para trabalhar senso de pertencimento e produtividade de membros.'"
           class="q-mb-xl"
         />
-        <router-link class="decoration-none button-home" to="/functionalities">
+        <router-link class="decoration-none button-home mobile-hide" to="/functionalities">
           <img src="~/assets/icon-button.svg" class="icon-button"/> TODAS AS FUNCIONALIDADES
         </router-link>
       </div>
       <div class="col-md-6 col-sm-12">
         <img src="~/assets/image-home.svg" alt="Image Peaples" class="image-home"/>
+      </div>
+    </div>
+    <div class="row mobile-only">
+      <div class="col">
+        <router-link class="decoration-none button-home" to="/functionalities">
+          <img src="~/assets/arrow-right.svg" class="icon-button"/> TODAS AS FUNCIONALIDADES
+        </router-link>
       </div>
     </div>
   </div>
