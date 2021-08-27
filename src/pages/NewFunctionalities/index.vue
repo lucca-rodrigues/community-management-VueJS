@@ -10,7 +10,7 @@
     <div class="row q-mt-xl q-mb-lg flex items-center justify-between">
       <div class="col-md-6 col-sm-12">
         <Title :title="`Adicionar Functionalidades`" class="q-mt" />
-      </div>      
+      </div>
       <div class="col-md-6 col-sm-12 text-right add-new">
         <router-link class="decoration-none" to="/functionalities">
           Cancelar
@@ -18,31 +18,66 @@
       </div>
     </div>
     <div class="tabs-functionalities">
-        <div>
-            <q-card>
-            <q-tabs v-model="tab">
-                <q-tab name="managers" label="COMO GESTOR" class="button-tabs" @click="this.typeFunctionality === 'managers'"/>
-                <q-tab name="member" label="COMO MEMBRO" class="button-tabs" @click="this.typeFunctionality === 'members'"/>
-            </q-tabs>
+      <div>
+        <q-card>
+          <q-tabs v-model="tab">
+            <q-tab
+              name="managers"
+              label="COMO GESTOR"
+              class="button-tabs"
+              @click="this.typeFunctionality === 'managers'"
+            />
+            <q-tab
+              name="member"
+              label="COMO MEMBRO"
+              class="button-tabs"
+              @click="this.typeFunctionality === 'members'"
+            />
+          </q-tabs>
 
-            <q-tab-panels v-model="tab" animated>
-                <q-tab-panel name="managers">
-                <div class="row">
-                    teste
-                </div>
-                </q-tab-panel>
+          <q-tab-panels v-model="tab" animated>
+            <q-tab-panel name="managers">
+              <div class="row">
+                <q-form
+                  @submit="createNewManage"
+                  class="q-gutter-md"
+                >
+                  <q-input
+                    filled
+                    v-model="data.title"
+                    label="Titulo"
+                    lazy-rules
+                  />
+                  <q-input
+                    filled
+                    v-model="data.icon"
+                    label="Ícone(nome)"
+                    lazy-rules
+                  />
+                  <q-input
+                    filled
+                    v-model="data.description"
+                    type="textarea"
+                    label="Descrição"
+                    lazy-rules
+                  />
 
-                <q-tab-panel name="member">
-                <div class="row">
-                    teste2
-                </div>
-                </q-tab-panel>
-            </q-tab-panels>
-            </q-card>
-        </div>
-        </div>
+                  <div class="buttons">
+                    <q-btn label="Enviar" type="submit" color="primary" />
+                  </div>
+                </q-form>
+              </div>
+            </q-tab-panel>
+
+            <q-tab-panel name="member">
+              <div class="row">teste2</div>
+            </q-tab-panel>
+          </q-tab-panels>
+        </q-card>
+      </div>
+    </div>
   </div>
-  <Footer/>
+  <Footer />
 </template>
 
 <script>
@@ -50,14 +85,14 @@ import { ref } from "vue";
 import Title from "components/Title";
 import Footer from "components/Footer";
 import Api from "../../services/api";
-import './styles.scss';
+import "./styles.scss";
 
 export default {
   components: {
     Title,
-    Footer
+    Footer,
   },
-    setup() {
+  setup() {
     return {
       tab: ref("managers"),
     };
@@ -65,33 +100,38 @@ export default {
   data() {
     return {
       data: {
-          title:"",
-          icon: "",
-          description: "",
+        title: "",
+        icon: "",
+        description: "",
       },
       typeFunctionality: "managers",
     };
   },
   methods: {
-    handleSubmit(e) {
-      e.preventDefault();
-
-        if(typeFunctionality === "managers"){
-            this.createNewManage();
-        }
-        this.createNewMember();
-    },
-
-    createNewManage() {
-      const response = Api.post("/managers", data);
-      console.log(response.data);
-      this.managers = response.data;
+      createNewManage(){
+        const data = this.data;
+        Api.post("/managers", data);
+        console.log('Created Manager:', data);
     },
     createNewMember() {
-      const response = Api.post("/members", data);
-      console.log(response.data);
-      this.members = response.data;
+        const data = this.data;
+        Api.post("/members", data);
+        console.log('Created Member:', data);
     },
+    handleSubmit() {
+        
+      //   e.preventDefault();
+
+    //   if (typeFunctionality === "managers") {
+    //     this.createNewManage();
+    //     console.log("managers");
+    //   }
+      createNewMember();
+      console.log("members");
+    },
+    // onReset() {},
+
+    
   },
   mounted() {
     // this.createNewManage();
